@@ -89,11 +89,8 @@ export class Array3D<T> {
   }
 
   public isolate({ x, y }: { x: number; y: number }): T | undefined {
-    if (
-      typeof this.result.at(x) !== 'undefined' ||
-      typeof this.result.at(x)?.at(y) !== 'undefined'
-    ) {
-      return this.result.at(x)?.at(y)
+    if (typeof this.result[x] !== 'undefined' || typeof this.result[x][y] !== 'undefined') {
+      return this.result[x][y]
     } else {
       throw new Error('x / y value exceeds the constraint limit')
     }
@@ -135,8 +132,8 @@ export class Array3D<T> {
       }
 
       Object.assign(this.highlight, {
-        row: array?.at(this.rowIndex) || array?.at(0),
-        column: array?.at(this.rowIndex)?.at(this.columnIndex) || array?.at(0)?.at(0),
+        row: array[this.rowIndex] || array[0],
+        column: array[this.rowIndex][this.columnIndex] || array[0][0],
       })
 
       return this.highlight
@@ -149,7 +146,7 @@ export class Array3D<T> {
       }
 
       Object.assign(this.highlight, {
-        row: array?.at(this.rowIndex) || array?.at(0),
+        row: array[this.rowIndex] || array[0],
       })
 
       return this.highlight
@@ -173,8 +170,8 @@ export class Array3D<T> {
       }
 
       Object.assign(this.highlight, {
-        row: array?.at(this.rowIndex) || array?.at(0),
-        column: array?.at(this.rowIndex)?.at(this.columnIndex) || array?.at(0)?.at(0),
+        row: array[this.rowIndex] || array[0],
+        column: array[this.rowIndex][this.columnIndex] || array[0][0],
       })
 
       return this.highlight
@@ -187,7 +184,7 @@ export class Array3D<T> {
       }
 
       Object.assign(this.highlight, {
-        row: array?.at(this.rowIndex) || array?.at(0),
+        row: array[this.rowIndex] || array[0],
       })
 
       return this.highlight
