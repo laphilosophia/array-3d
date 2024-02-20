@@ -1,12 +1,28 @@
 {
   "name": "@laphilosophia/array3d",
   "version": "1.0.0",
+  "description": "Dependency free, 3D array utility manager",
   "type": "module",
+  "author": "Erdem Arslan",
+  "license": "MIT",
+  "repository": {
+    "type": "https://github.com/laphilosophia/array-3d",
+    "url": "git+https://github.com/laphilosophia/array-3d.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "keywords": [
+    "3d-array",
+    "array",
+    "utility"
+  ],
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
